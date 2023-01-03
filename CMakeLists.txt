@@ -1,40 +1,24 @@
 cmake_minimum_required(VERSION 3.16)
 project("Morkovka2D")
 
+set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CMAKE_COMMAND} -E time")
+
 set(CMAKE_CXX_STANDARD 14)
 
-add_library(Morkovka2D STATIC src/main.cpp
-    src/Window/Window.hpp
-    src/Window/Window.cpp
-    src/Renderer/Buffer.hpp
-    src/Renderer/Buffer.cpp
-)
+set(M2D_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Morkovka2D)
+set(MCORE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/MorkovkaCore)
+set(VENDOR_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/vendor)
 
-# AMSTL
+# Vendor dependencies
+add_subdirectory(${VENDOR_DIRECTORY}/glfw)
+add_subdirectory(${VENDOR_DIRECTORY}/glad)
+add_subdirectory(${VENDOR_DIRECTORY}/glm)
+add_subdirectory(${VENDOR_DIRECTORY}/stb_image)
+add_subdirectory(${VENDOR_DIRECTORY}/imgui)
+
+# Morkovka dependencies
 add_subdirectory(MorkovkaCore)
-target_link_libraries(Morkovka2D MorkovkaCore)
+add_subdirectory(Morkovka2D)
 
-# GLFW
-add_subdirectory(vendor/glfw)
-target_link_libraries(Morkovka2D glfw)
-target_include_directories(Morkovka2D PRIVATE vendor/glfw/include)
-
-# GLAD
-add_subdirectory(vendor/glad)
-target_link_libraries(Morkovka2D glad)
-target_include_directories(Morkovka2D PRIVATE vendor/glad/include)
-
-# GLM
-add_subdirectory(vendor/glm)
-target_link_libraries(Morkovka2D glm)
-target_include_directories(Morkovka2D PRIVATE vendor/glm)
-
-# STB_IMAGE
-add_subdirectory(vendor/stb_image)
-target_link_libraries(Morkovka2D stb_image)
-target_include_directories(Morkovka2D PRIVATE vendor/stb_image)
-
-# imgui
-add_subdirectory(vendor/imgui)
-target_link_libraries(Morkovka2D imgui)
-target_include_directories(Morkovka2D PRIVATE vendor/imgui)
+# Game
+add_subdirectory(Example)
