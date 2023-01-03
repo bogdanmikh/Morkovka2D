@@ -4,7 +4,6 @@ file(GLOB_RECURSE SOURCES src/*.cpp)
 file(GLOB_RECURSE INCLUDE src/*.hpp include/Morkovka2D/*.hpp)
 
 add_library(Morkovka2D STATIC "${SOURCES}" "${INCLUDE}")
-
 target_include_directories(Morkovka2D PRIVATE ${M2D_DIRECTORY}/include)
 
 # MorkovkaCore

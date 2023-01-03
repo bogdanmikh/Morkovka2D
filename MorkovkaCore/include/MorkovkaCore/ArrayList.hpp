@@ -12,13 +12,12 @@ template <typename T>
         //кол-во выделенной памяти памяти
         uint32_t reserve_t;
         // начальное кол-во элементов в списке
-        const uint32_t *reserve_start = new uint32_t(10);
+        const uint32_t reserve_start = 10;
         // сами данные
         T *data;
     public:
         inline ArrayList() : size_t(0) {
             reserve_t = reserve_start;
-            delete reserve_start;
             data = new T[reserve_t];
         }
         // возращает кол-во текущих элементов

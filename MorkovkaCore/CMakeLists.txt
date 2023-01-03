@@ -7,5 +7,4 @@ file(GLOB_RECURSE SOURCES src/*.cpp)
 file(GLOB_RECURSE INCLUDE src/*.hpp include/MorkovkaCore/*.hpp)
 
 add_library(MorkovkaCore STATIC "${SOURCES}" "${INCLUDE}")
-
 target_include_directories(MorkovkaCore PRIVATE include)
