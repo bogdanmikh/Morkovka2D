@@ -4,7 +4,7 @@
 
 #include <glm/ext.hpp>
 
-Sprite::Sprite(std::string texturePath, Shader* shader)
+Sprite::Sprite(std::string texturePath, Shader *shader)
     : isCollision(false)
     , texture(texturePath)
     , position(0.f)
@@ -19,14 +19,14 @@ Sprite::Sprite(std::string texturePath, Shader* shader)
     //
 
     // Ось объекта в точке 3
-    float *data = new float[24] {
-    //    x   y          u    v
-        1.f, 1.f,       1.f, 0.f,   // 1
-        0.f, 1.f,       0.f, 0.f,   // 2
-        0.f, 0.f,       0.f, 1.f,   // 3
-        1.f, 1.f,       1.f, 0.f,   // 1
-        0.f, 0.f,       0.f, 1.f,   // 3
-        1.f, 0.f,       1.f, 1.f,   // 4
+    float *data = new float[24]{
+        //    x   y          u    v
+        1.f, 1.f, 1.f, 0.f, // 1
+        0.f, 1.f, 0.f, 0.f, // 2
+        0.f, 0.f, 0.f, 1.f, // 3
+        1.f, 1.f, 1.f, 0.f, // 1
+        0.f, 0.f, 0.f, 1.f, // 3
+        1.f, 0.f, 1.f, 1.f, // 4
     };
 
     // Ось объекта в точке 2
@@ -103,6 +103,7 @@ float Sprite::getMinX() {
     return position.x;
 }
 
-double Sprite::distanceTo(Sprite* other) {
-    return sqrt((getMinX() - other->getMinX()) * (getMinX() - other->getMinX()) + (getMinY() - other->getMinY()) * (getMinY() - other->getMinY()));
+double Sprite::distanceTo(Sprite *other) {
+    return sqrt(
+        (getMinX() - other->getMinX()) * (getMinX() - other->getMinX()) + (getMinY() - other->getMinY()) * (getMinY() - other->getMinY()));
 }

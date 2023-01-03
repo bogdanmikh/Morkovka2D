@@ -1,21 +1,21 @@
 #include "Morkovka2D/Application.hpp"
 
-#include "Morkovka2D/Renderer/Renderer.hpp"
 #include "Morkovka2D/LevelManager.hpp"
+#include "Morkovka2D/Renderer/Renderer.hpp"
 #include "Renderer/ImGui.hpp"
 
 #include <chrono>
-#include <iostream>
 #include <glm/glm.hpp>
+#include <iostream>
 
 uint64_t getMillis() {
     auto now = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch());
     return now.count();
 }
 
-Application* Application::s_instance;
+Application *Application::s_instance;
 
-Application* Application::getInstance() {
+Application *Application::getInstance() {
     return s_instance;
 }
 
@@ -73,7 +73,7 @@ void Application::loop() {
         world.update(deltaTime);
         ImGui_EndFrame();
 
-        if(window->isKeyPressed(Key::ESCAPE)) {
+        if (window->isKeyPressed(Key::ESCAPE)) {
             close();
         }
 
@@ -86,7 +86,7 @@ void Application::loop() {
     }
 }
 
-void Application::loadLevel(Level* level) {
+void Application::loadLevel(Level *level) {
     world.deleteAll();
     currentLevel = level;
     level->start(&world, camera);

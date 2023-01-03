@@ -80,7 +80,8 @@ Shader::Shader(const char *vertexPath, const char *fragmentPath, const char *geo
     }
     glLinkProgram(m_RendererID);
     checkCompileErrors(m_RendererID, "PROGRAM");
-    // delete the shaders as they're linked into our program now and no longer necessery
+    // delete the shaders as they're linked into our program now and no longer
+    // necessery
     glDeleteShader(vertex);
     glDeleteShader(fragment);
     if (geometryPath != nullptr) {

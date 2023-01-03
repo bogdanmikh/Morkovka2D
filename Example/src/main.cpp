@@ -1,8 +1,8 @@
 #include <Morkovka2D/Application.hpp>
 #include <Morkovka2D/LevelManager.hpp>
 
-#include "Levels/MenuLevel.hpp"
 #include "Levels/FirstLevel.hpp"
+#include "Levels/MenuLevel.hpp"
 #include "Levels/SecondLevel.hpp"
 
 int main() {

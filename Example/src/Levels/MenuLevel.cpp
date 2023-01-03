@@ -6,6 +6,6 @@ MenuLevel::~MenuLevel() {
     delete shader;
 }
 
-void MenuLevel::start(World* world, Camera* camera) {
+void MenuLevel::start(World *world, Camera *camera) {
     world->addActor(new Menu());
 }

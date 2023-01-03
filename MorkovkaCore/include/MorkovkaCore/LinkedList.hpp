@@ -1,9 +1,6 @@
 #pragma once
 
-#include <iostream>
 #include <cassert>
+#include <iostream>
 
-namespace mcore {
-
-}
-
+namespace mcore {}

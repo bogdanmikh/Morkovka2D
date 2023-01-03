@@ -3,7 +3,7 @@
 #include <Morkovka2D/Application.hpp>
 #include <Morkovka2D/LevelManager.hpp>
 
-GameOverLabel::GameOverLabel(Shader* shader, Player* player) 
+GameOverLabel::GameOverLabel(Shader *shader, Player *player)
     : Sprite("textures/GameOverLabel.png", shader)
     , labelTime(0.0) {
     setPosition(player->getMinX() - 2.5, player->getMinY() + 0.2, 0.f);
@@ -13,7 +13,7 @@ GameOverLabel::GameOverLabel(Shader* shader, Player* player)
 void GameOverLabel::update(double deltaTime) {
     labelTime += deltaTime;
     std::cout << "LebelTime: " << labelTime << " deltaTime: " << deltaTime << '\n';
-    if(labelTime >= 1) {
+    if (labelTime >= 1) {
         Application::getInstance()->loadLevel(getCurrentLevel());
         return;
     }

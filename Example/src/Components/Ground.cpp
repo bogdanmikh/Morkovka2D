@@ -1,6 +1,6 @@
 #include "Ground.hpp"
 
-Ground::Ground(Shader* shader)
+Ground::Ground(Shader *shader)
     : Sprite("textures/Earth.png", shader) {
     isCollision = true;
 }

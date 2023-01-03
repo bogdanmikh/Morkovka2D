@@ -1,10 +1,10 @@
 #pragma once
 
-#include "World.hpp"
 #include "Morkovka2D/Camera.hpp"
+#include "World.hpp"
 
 class Level {
-public:   
+public:
     virtual ~Level() = default;
-    virtual void start(World* world, Camera* camera) = 0;
+    virtual void start(World *world, Camera *camera) = 0;
 };

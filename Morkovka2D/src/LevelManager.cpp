@@ -3,26 +3,26 @@
 #include <MorkovkaCore/ArrayList.hpp>
 
 int currentLevelIndex = 0;
-mcore::ArrayList<Level*> levels;
-Level* menuLevel;
+mcore::ArrayList<Level *> levels;
+Level *menuLevel;
 
-void setMenuLevel(Level* level) {
+void setMenuLevel(Level *level) {
     menuLevel = level;
 }
 
-Level* getMenuLevel() {
+Level *getMenuLevel() {
     return menuLevel;
 }
 
-void pushLevel(Level* level) {
+void pushLevel(Level *level) {
     levels.push_back(level);
 }
 
-Level* getCurrentLevel() {
+Level *getCurrentLevel() {
     return getLevelWithIndex(currentLevelIndex);
 }
 
-Level* getLevelWithIndex(int index) {
+Level *getLevelWithIndex(int index) {
     currentLevelIndex = index;
     if (index == -1) {
         return menuLevel;

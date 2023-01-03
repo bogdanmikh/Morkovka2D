@@ -1,6 +1,6 @@
 #pragma once
 
-void ImGui_Init(void* glfwWindowHandle);
+void ImGui_Init(void *glfwWindowHandle);
 
 void ImGui_NewFrame();
 

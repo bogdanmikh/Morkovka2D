@@ -9,7 +9,7 @@ Camera::Camera()
     , aspect(1.f)
     , rotation(0.f)
     , position(0.f)
-    , front(0.f) 
+    , front(0.f)
     , right(0.f)
     , up(0.f) {
     updateVectors();

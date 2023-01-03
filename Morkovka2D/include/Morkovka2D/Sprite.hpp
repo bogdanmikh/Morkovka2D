@@ -1,16 +1,16 @@
 #pragma once
 
-#include <iostream>
 #include <glm/glm.hpp>
+#include <iostream>
 
-#include "Morkovka2D/Renderer/VertexBuffer.hpp"
-#include "Morkovka2D/Renderer/VertexArray.hpp"
-#include "Morkovka2D/Renderer/Texture.hpp"
 #include "Morkovka2D/Renderer/Shader.hpp"
+#include "Morkovka2D/Renderer/Texture.hpp"
+#include "Morkovka2D/Renderer/VertexArray.hpp"
+#include "Morkovka2D/Renderer/VertexBuffer.hpp"
 
 class Sprite {
 public:
-    Sprite(std::string texturePath, Shader* shader);
+    Sprite(std::string texturePath, Shader *shader);
     ~Sprite();
     void setPosition(float x, float y, float z);
     void translate(float x, float y, float z);
@@ -21,18 +21,20 @@ public:
     float getMaxX();
     float getMinX();
 
-    double distanceTo(Sprite* other);
+    double distanceTo(Sprite *other);
 
     void draw();
     bool isCollision;
+
 private:
     void updateModelMatrix();
 
     Texture texture;
-    VertexBuffer* vertexBuffer;
-    VertexArray* vertexArray;
+    VertexBuffer *vertexBuffer;
+    VertexArray *vertexArray;
     glm::vec3 position;
     glm::vec2 size;
+
 protected:
-    Shader* shader;
+    Shader *shader;
 };

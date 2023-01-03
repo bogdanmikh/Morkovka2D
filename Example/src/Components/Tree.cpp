@@ -1,6 +1,6 @@
 #include "Tree.hpp"
 
-Tree::Tree(Shader* shader)
+Tree::Tree(Shader *shader)
     : Sprite("textures/Wood.png", shader) {
     setPosition(0.f, 0.5f, 0.f);
     setSize(1., 1.);

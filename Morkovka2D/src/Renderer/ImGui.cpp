@@ -5,14 +5,15 @@
 
 #include <imgui.h>
 
-void ImGui_Init(void* glfwWindowHandle) {
+void ImGui_Init(void *glfwWindowHandle) {
     ImGui::CreateContext();
 
-	ImGuiIO& io = ImGui::GetIO(); (void)io;
-	float fontSize = 18.0f;
-	io.FontDefault = io.Fonts->AddFontFromFileTTF("fonts/ProggyTiny.ttf", fontSize);
+    ImGuiIO &io = ImGui::GetIO();
+    (void)io;
+    float fontSize = 18.0f;
+    io.FontDefault = io.Fonts->AddFontFromFileTTF("fonts/ProggyTiny.ttf", fontSize);
 
-    ImGui_ImplGlfw_InitForOpenGL(static_cast<GLFWwindow*>(glfwWindowHandle), true);
+    ImGui_ImplGlfw_InitForOpenGL(static_cast<GLFWwindow *>(glfwWindowHandle), true);
     ImGui_ImplOpenGL3_Init();
 }
 

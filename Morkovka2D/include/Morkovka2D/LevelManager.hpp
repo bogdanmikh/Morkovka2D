@@ -2,16 +2,16 @@
 
 #include "Level.hpp"
 
-Level* getCurrentLevel();
+Level *getCurrentLevel();
 
-Level* getMenuLevel();
+Level *getMenuLevel();
 
-void setMenuLevel(Level* level);
+void setMenuLevel(Level *level);
 
-Level* getLevelWithIndex(int index);
+Level *getLevelWithIndex(int index);
 
-void pushLevel(Level* level);
+void pushLevel(Level *level);
 
-/// Прибавляет номер уровня на 1. 
+/// Прибавляет номер уровня на 1.
 /// Если текущий уровень последний - номер становится 0
 void increaseLevelNumber();

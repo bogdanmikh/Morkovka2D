@@ -1,18 +1,18 @@
 #include "FirstLevel.hpp"
 
-#include "Components/Player.hpp"
-#include "Components/Ground.hpp"
+#include "Components/Door.hpp"
 #include "Components/Enemy.hpp"
+#include "Components/Ground.hpp"
 #include "Components/Money.hpp"
-#include "Components/Door.hpp"   
-#include "Components/Spring.hpp"   
-#include "Components/Tree.hpp"   
+#include "Components/Player.hpp"
+#include "Components/Spring.hpp"
+#include "Components/Tree.hpp"
 
 FirstLevel::~FirstLevel() {
     delete shader;
 }
 
-void FirstLevel::start(World* world, Camera* camera) {
+void FirstLevel::start(World *world, Camera *camera) {
     shader = new Shader("shaders/vst.glsl", "shaders/fst.glsl");
     camera->setShader(shader);
 
@@ -20,7 +20,6 @@ void FirstLevel::start(World* world, Camera* camera) {
     tree->setSize(2.f, 1.5f);
     tree->setPosition(3.f, -1.5f, 0.f);
     world->addActor(tree);
-
 
     auto player = new Player(shader, camera);
     player->setSize(0.5f, 1.f);
@@ -37,7 +36,7 @@ void FirstLevel::start(World* world, Camera* camera) {
     enemy_2->setSize(0.4f, 0.6f);
     enemy_2->setPosition(-3.f, 5.f, 0.f);
     world->addActor(enemy_2);
-    
+
     auto enemy_3 = new Enemy(shader, player);
     enemy_3->setSize(0.4f, 0.6f);
     enemy_3->setPosition(-7.8f, 3.f, 0.f);
@@ -47,7 +46,7 @@ void FirstLevel::start(World* world, Camera* camera) {
     place1->setPosition(-5.f, -7.5f, 0.f);
     place1->setSize(10.f, 6.f);
     world->addActor(place1);
-    
+
     auto place2 = new Ground(shader);
     place2->setPosition(5.f, -7.5f, 0.f);
     place2->setSize(10.f, 6.f);
@@ -62,32 +61,32 @@ void FirstLevel::start(World* world, Camera* camera) {
     place4->setPosition(-15.f, -7.5f, 0.f);
     place4->setSize(10.f, 6.f);
     world->addActor(place4);
-    
+
     auto place5 = new Ground(shader);
     place5->setPosition(-32.f, -5.f, 0.f);
     place5->setSize(12.f, 8.f);
     world->addActor(place5);
-    
+
     auto ground1 = new Ground(shader);
     ground1->setPosition(1.9f, -1.4f, 0.f);
     ground1->setSize(1.f, 1.f);
     world->addActor(ground1);
-    
+
     auto ground2 = new Ground(shader);
     ground2->setPosition(3.7f, 0.2f, 0.f);
     ground2->setSize(1.f, 1.f);
     world->addActor(ground2);
-    
+
     auto ground3 = new Ground(shader);
     ground3->setPosition(1.5f, 1.8f, 0.f);
     ground3->setSize(1.f, 1.f);
     world->addActor(ground3);
-   
+
     auto ground4 = new Ground(shader);
     ground4->setPosition(-6.f, 4.f, 0.f);
     ground4->setSize(6.f, 0.2f);
     world->addActor(ground4);
-    
+
     auto ground5 = new Ground(shader);
     ground5->setPosition(-8.f, 2.f, 0.f);
     ground5->setSize(1.f, 1.f);
@@ -102,22 +101,22 @@ void FirstLevel::start(World* world, Camera* camera) {
     money_1->setSize(0.5f, 0.5f);
     money_1->setPosition(5.f, -1.3f, 0.f);
     world->addActor(money_1);
-    
+
     auto money_2 = new Money(shader, player);
     money_2->setSize(0.5f, 0.5f);
     money_2->setPosition(-4.f, 4.4f, 0.f);
     world->addActor(money_2);
-   
+
     auto money_3 = new Money(shader, player);
     money_3->setSize(0.5f, 0.5f);
     money_3->setPosition(-12.f, 2.2f, 0.f);
     world->addActor(money_3);
-    
+
     auto money_4 = new Money(shader, player);
     money_4->setSize(0.5f, 0.5f);
     money_4->setPosition(-18.f, -2.2f, 0.f);
     world->addActor(money_4);
-    
+
     auto door = new Door(shader, player);
     door->setSize(0.5f, 1.f);
     door->setPosition(13.5f, -1.5f, 0.f);

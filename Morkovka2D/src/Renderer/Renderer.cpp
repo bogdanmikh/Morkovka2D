@@ -27,7 +27,8 @@ void checkForErrors() {
         const GLenum err = glGetError();
         if (GL_NO_ERROR == err)
             break;
-        std::cout << "OPENGL: " << getGLErrorStr(err) << std::endl;;
+        std::cout << "OPENGL: " << getGLErrorStr(err) << std::endl;
+        ;
     }
 }
 

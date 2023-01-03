@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Sprite.hpp"
 #include "Direction.hpp"
+#include "Sprite.hpp"
 
 class CollisionDetector {
 public:
-    static bool moveAcceptable(Sprite* entity, Direction direction, float amount);
+    static bool moveAcceptable(Sprite *entity, Direction direction, float amount);
 };

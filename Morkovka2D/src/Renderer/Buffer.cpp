@@ -2,7 +2,7 @@
 
 #include <glad/glad.h>
 
-Buffer::Buffer () {
+Buffer::Buffer() {
     glGenBuffers(1, &VBO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO); 
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
 }

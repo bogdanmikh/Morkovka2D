@@ -5,10 +5,11 @@
 #include <Morkovka2D/GameObject.hpp>
 #include <Morkovka2D/Sprite.hpp>
 
-class Enemy: public GameObject, public Sprite {
+class Enemy : public GameObject, public Sprite {
 public:
-    Enemy(Shader* shader, Player* player);
+    Enemy(Shader *shader, Player *player);
     void update(double deltaTime) override;
+
 private:
     Player *player;
     float verticalForce;

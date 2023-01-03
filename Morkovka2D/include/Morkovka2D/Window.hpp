@@ -1,11 +1,11 @@
 #pragma once
 
-#include <glm/glm.hpp>
 #include "Key.hpp"
+#include <glm/glm.hpp>
 
 class Window {
 public:
-    Window(const char* name, double resolution_x, double resolution_y);
+    Window(const char *name, double resolution_x, double resolution_y);
     ~Window();
     bool shouldClose();
     glm::vec2 getCursorPos();
@@ -17,8 +17,9 @@ public:
     void setShouldClose();
     void swapBuffers();
     void pollEvents();
-    void* getNativeHandle();
+    void *getNativeHandle();
+
 private:
-    void* handle;
+    void *handle;
     bool cursorLocked;
 };

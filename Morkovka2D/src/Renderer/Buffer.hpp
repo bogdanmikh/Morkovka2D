@@ -3,8 +3,9 @@
 #include <cstdint>
 
 class Buffer {
-private: 
+private:
     uint32_t VBO;
+
 public:
     Buffer();
     ~Buffer();

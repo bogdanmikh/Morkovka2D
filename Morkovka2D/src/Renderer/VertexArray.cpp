@@ -5,8 +5,8 @@
 //  Created by Admin on 14.07.2021.
 //
 
-#include "Morkovka2D/Renderer/Mesh.hpp"
 #include "Morkovka2D/Renderer/VertexArray.hpp"
+#include "Morkovka2D/Renderer/Mesh.hpp"
 
 #include <glad/glad.h>
 
