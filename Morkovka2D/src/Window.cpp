@@ -1,7 +1,7 @@
 #include "Morkovka2D/Window.hpp"
 
-#include <GLFW/glfw3.h>
 #include <glad/glad.h>
+#include <GLFW/glfw3.h>
 #include <iostream>
 
 Window::Window(const char *name, double resolution_x, double resolution_y)
